@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bitcount+Single:wght@100..900&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>WebJack - Blackjack WEB</title>
+</head>
+<body>
+    <div id="main-menu">
+        <h1>WebJack</h1>
+        <p>Free. No payments.</p>
+        <button id="start-btn">Start Game</button>
+        <footer>made by: @diegoolivaa on <a href="https://github.com/diegoolivaa">Github</a></footer>
+
+        <div id="card-images" class="card-stack">
+            <img src="./img/card_diamonds_10.png" class="card-1">
+            <img src="./img/card_joker_black.png" class="card-2">
+        </div>
+    </div>
+
+    <div id="game-message">
+        <div id="msg-txt"></div>
+        <button id="restart-btn" class="game-btn"  style="display: none;">Play Again!</button>
+    </div>
+
+    <div id="game-screen" style="display: none;">
+        <div id="dealer-section">
+            <h3>Dealer: <span id="dealer-score">0</span></h3>
+            <div id="dealer-cards" class="card-container"></div>
+        </div>
+
+        <div id="player-section">
+            <h3>You: <span id="player-score">0</span></h3>
+            <div id="player-cards" class="card-container"></div>
+        </div>
+
+        <div class="game-controls">
+            <button id="hit-btn" class="game-btn">Hit</button>
+            <button id="stand-btn" class="game-btn">Stand</button>
+            <button id="deal-btn" class="game-btn">Deal</button>
+        </div>
+
+        <div id="betting-area">
+            <div class="money-display">
+                <p>BANKROLL: $<span id="bankroll-display">500</span></p>
+                <p>CURRENT BET: $<span id="current-bet-display">0</span></p>
+            </div>
+
+            <div class="chips">
+                <button class="chip-btn" onclick="addBet(10)">+$10</button>
+                <button class="chip-btn" onclick="addBet(25)">+$25</button>
+                <button class="chip-btn" onclick="addBet(50)">+$50</button>
+                <button class="chip-btn" onclick="clearBet()">Clear</button>
+            </div>
+        </div>
+    </div>
+
+    <audio id="deal-sound" src="./audio/card.wav" preload="auto"></audio>
+    <audio id="win-sound" src="./audio/win.wav" preload="auto"></audio>
+    <audio id="lose-sound" src="./audio/lose.wav" preload="auto"></audio>
+    <audio id="chip-sound" src="./audio/poker.wav" preload="auto"></audio>
+    <script src="script.js"></script>
+</body>
+</html>
